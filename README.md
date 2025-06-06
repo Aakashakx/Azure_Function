@@ -1,4 +1,4 @@
-# 💡 Azure Function CI/CD Demo
+#  Azure Function CI/CD Demo
 
 This project demonstrates how to create, configure, and deploy an **Azure Function** using **GitHub Actions** for Continuous Integration and Continuous Deployment (CI/CD). The function fetches the USD to INR exchange rate using an external API.
 
