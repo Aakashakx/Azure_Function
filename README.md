@@ -1,6 +1,6 @@
 #  Azure Function CI/CD Demo
 
-This project demonstrates how to create, configure, and deploy an **Azure Function** using **GitHub Actions** for Continuous Integration and Continuous Deployment (CI/CD). The function fetches the USD to INR exchange rate using an external API.
+This task demonstrates how to create, configure, and deploy an **Azure Function** using **GitHub Actions** for Continuous Integration and Continuous Deployment (CI/CD). The function fetches the USD to INR exchange rate using an external API.
 
 ---
 
@@ -53,8 +53,8 @@ Use the Infrastructure as Code (IaC) files to provision the Azure infrastructure
    terraform apply -auto-approve
 
 
-After the infrastructure is provisioned, push the code to GitHub to trigger the CI/CD pipeline.
-
+After provisioning infrastructure, push your changes to a new feature branch (new-function) and open a Pull Request (PR) for manual review and approval.
+Once the PR is approved and merged into the main branch, the CI/CD pipeline will run automatically.
 
 ## CI/CD with GitHub Actions
 Trigger:
@@ -82,4 +82,9 @@ The pipeline runs on every push to the main branch only if files inside the MyFu
 | `AZURE_FUNCTIONAPP_PUBLISH_PROFILE` | Azure function publish profile XML |
 
 You can download the publish profile from the Azure Portal under your Function App > "Get publish profile".
+
+
+**Screenshots**
+
+
 
