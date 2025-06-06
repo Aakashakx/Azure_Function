@@ -11,7 +11,7 @@ This project demonstrates how to create, configure, and deploy an **Azure Functi
 - ✅ Returns INR exchange rates for USD
 - ✅ GitHub Actions for automated CI/CD
 - ✅ Infrastructure as Code (IaC) using Terraform
-- ✅ Secrets managed via GitHub repository scerets settings
+- ✅ Secrets managed via GitHub repository secrets settings
 
 ---
 
