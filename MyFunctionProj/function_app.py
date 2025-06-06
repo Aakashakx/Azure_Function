@@ -2,24 +2,38 @@ import azure.functions as func
 import requests
 import logging
 import json
+from datetime import datetime, timedelta
 
 app = func.FunctionApp()
 
-@app.route(route="GetUSDtoINR", auth_level=func.AuthLevel.FUNCTION)
-def GetUSDtoINR(req: func.HttpRequest) -> func.HttpResponse:
-    logging.info('Fetching USD to INR exchange rate.')
+@app.route(route="GetUSDINRHistory", auth_level=func.AuthLevel.FUNCTION)
+def GetUSDINRHistory(req: func.HttpRequest) -> func.HttpResponse:
+    logging.info('Fetching last 10 days USD to INR exchange rates.')
 
     try:
-        # Free exchange rate API (you can use your API key for higher limits)
-        response = requests.get("https://api.exchangerate-api.com/v4/latest/USD")
+        end_date = datetime.today()
+        start_date = end_date - timedelta(days=10)
+
+        url = (
+            f"https://api.exchangerate.host/timeseries"
+            f"?start_date={start_date.date()}&end_date={end_date.date()}"
+            f"&base=USD&symbols=INR"
+        )
+
+        response = requests.get(url)
         data = response.json()
-        inr_rate = data["rates"]["INR"]
+
+        if not data.get("success"):
+            raise Exception("API returned failure")
+
+        rates = data.get("rates", {})
 
         return func.HttpResponse(
-            json.dumps({"USD_to_INR": inr_rate}),
+            json.dumps(rates, indent=2),
             status_code=200,
             mimetype="application/json"
         )
+
     except Exception as e:
-        logging.error(f"Error fetching exchange rate: {e}")
-        return func.HttpResponse("Failed to retrieve exchange rate.", status_code=500)
+        logging.error(f"Error fetching exchange rate history: {e}")
+        return func.HttpResponse("Failed to retrieve exchange rate history.", status_code=500)
