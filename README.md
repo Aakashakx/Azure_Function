@@ -88,6 +88,8 @@ You can download the publish profile from the Azure Portal under your Function A
 
 ![image](https://github.com/user-attachments/assets/043bf879-0bbc-4fd1-8611-dd0f4cb1b30e)
 
+![image](https://github.com/user-attachments/assets/1201f90c-fdd4-459f-bd33-0ec5ded3181a)
+
 ![image](https://github.com/user-attachments/assets/b9b48bcd-d8a2-4787-a54a-e97348ecc5a5)
 
 ![image](https://github.com/user-attachments/assets/a046bfc9-5071-4334-b699-af4942f2a06b)
