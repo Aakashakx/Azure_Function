@@ -52,7 +52,7 @@ Use the Infrastructure as Code (IaC) files to provision the Azure infrastructure
    ```bash
    terraform apply -auto-approve
 
-
+This IaC will create an Azure Resource Group, Azure Storage Account, and an Azure Function.
 After provisioning infrastructure, push your changes to a new feature branch (new-function) and open a Pull Request (PR) for manual review and approval.
 Once the PR is approved and merged into the main branch, the CI/CD pipeline will run automatically.
 
@@ -66,7 +66,7 @@ The pipeline runs on every push to the main branch only if files inside the MyFu
    ```
 **Key CI/CD Steps**
 
-1. Checkout the repository
+1. Check-out the repository
 
 2. Set up the Python environment
 
@@ -86,5 +86,11 @@ You can download the publish profile from the Azure Portal under your Function A
 
 **Screenshots**
 
+![image](https://github.com/user-attachments/assets/043bf879-0bbc-4fd1-8611-dd0f4cb1b30e)
 
+![image](https://github.com/user-attachments/assets/b9b48bcd-d8a2-4787-a54a-e97348ecc5a5)
+
+![image](https://github.com/user-attachments/assets/a046bfc9-5071-4334-b699-af4942f2a06b)
+
+![image](https://github.com/user-attachments/assets/a9f706cb-6b08-4919-afba-7dc3e0f7025e)
 
